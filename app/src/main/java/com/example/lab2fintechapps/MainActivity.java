@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lab2fintechapps.exception.InvalidInputException;
+import com.example.lab2fintechapps.util.TextCounter;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText edtInputText;
@@ -65,12 +68,16 @@ public class MainActivity extends AppCompatActivity {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculateAndDisplay();
+                try {
+                    calculateAndDisplay();
+                } catch (InvalidInputException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
 
-    private void calculateAndDisplay() {
+    private void calculateAndDisplay() throws InvalidInputException {
         String inputText = edtInputText.getText().toString();
 
         if (inputText.trim().isEmpty()) {
