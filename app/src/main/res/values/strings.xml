@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Lab2FinTechApps</string>
+    <string name="app_name">Text Counter</string>
+    <string name="label_input_text">Enter Text:</string>
+    <string name="hint_enter_text">Type your text here…</string>
+    <string name="label_count_type">Select Count Type:</string>
+    <string name="label_result">Result:</string>
+    <string name="button_calculate">Calculate</string>
+    <string name="error_empty_input">Please enter some text!</string>
+    <string name="result_words">Words: %d</string>
+    <string name="result_punctuation">Punctuation marks: %d</string>
+
+    <string-array name="count_types">
+        <item>Words</item>
+        <item>Punctuation Marks</item>
+    </string-array>
 </resources>
